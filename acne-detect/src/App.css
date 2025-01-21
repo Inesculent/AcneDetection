@@ -7,12 +7,31 @@
   pointer-events: none;
 }
 
+.button-container{
+  margin-right: 5%;
+  text-align: center;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.header{
+  text-align: center;
+  height: 10%;
+  width: 100%;
+}
+
 .divider{
   height: 5px;
   width: 100%;
-  background: #399ea1;
+  background: #415a5c;
   margin-bottom: 5%;
   border-radius: 2px;
+}
+
+.value-display{
+  margin-top: 5px;
+  text-align: center;
+  font-size: 16pt;
 }
 
 .block-title{

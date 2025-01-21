@@ -4,6 +4,21 @@ const ProgressBar = ({ progress }) => {
     const svgRef = useRef(null);
     const [pathLength, setPathLength] = useState(400); // Default path length
 
+    let barStyle = 'gray'
+
+    if (progress < .5){
+        barStyle = '#a5f30a';
+    }
+    else if (progress < 1){
+        barStyle = '#f3cc0a';
+    }
+    else if (progress < 1.5){
+        barStyle = '#e95b0e';
+    }
+    else{
+        barStyle = '#CD5C5C';
+    }
+
     useEffect(() => {
         if (svgRef.current) {
             // Dynamically calculate path length based on container width
@@ -27,8 +42,9 @@ const ProgressBar = ({ progress }) => {
         width: "100%",
         height: "8px",
     };
+    // Calculate offset based on progress (log scale)
+    const dashOffset = pathLength - (Math.log(progress + 1) / Math.log(progress + 10)) * pathLength;
 
-    const dashOffset = pathLength - (progress / 100) * pathLength; // Calculate offset based on progress
 
     return (
         <div ref={svgRef} style={{ width: "100%" }}>
@@ -47,7 +63,7 @@ const ProgressBar = ({ progress }) => {
                 <path
                     d={`M4 4 L${pathLength} 4`}
                     style={{
-                        stroke: "#538ac4",
+                        stroke: barStyle,
                         strokeLinecap: "round",
                         strokeWidth: "8",
                         fill: "none",

@@ -1,18 +1,39 @@
-import logo from './128px-Black_Sun.svg.png';
 import './App.css';
 import './ProgressBar'
-import ProgressBar from "./ProgressBar";
 import {ProgressBlock} from "./ProgressBlock";
 import React, { useState } from "react";
+import ImageUpload from "./ImageUpload";
+import ImageDisplay from "./ImageDisplay";
+import app from './firebase';
+import { getAuth } from 'firebase/auth';
+import GoogleSignInButton from './signInWithGoogle';
+const auth = getAuth(app);
 
 
-let progress = 80;
-
-let progress2 = 40;
 
 function App() {
-  return (
+    const [refreshKey, setRefreshKey] = useState(0);
+    const [constantValue, setConstantValue] = useState("Initial Value");
+    const [numberAcne, setNumberAcne] = useState("Initial Value");
+
+    const handleUploadSuccess = () => {
+        // Increment the refreshKey to trigger ImageDisplay update
+        setRefreshKey((prevKey) => prevKey + 1);
+    };
+    return (
     <div className="App">
+
+        <div className="header">
+            <p>
+
+                <div className={"button-container"}>
+                    <GoogleSignInButton/>
+
+                </div>
+
+            </p>
+        </div>
+
 
         <div className="container">
 
@@ -21,35 +42,30 @@ function App() {
 
                 <div className="divider"></div>
 
-                <ProgressBlock progress={progress} title={"Acne Detected"}/>
+                <ProgressBlock progress={numberAcne} title={"Acne Detected"} hasBar ={false}/>
 
 
-                <ProgressBlock progress={progress2} title={"Acne Coverage"}/>
+                <ProgressBlock progress={constantValue} title={"Acne Coverage"} hasBar={true}/>
             </div>
+
 
             <div className="right">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
 
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn Redact
-                    </a>
+                    <div>
+                        <ImageUpload updateConstant={setConstantValue} updateValue={setNumberAcne}  onUploadSuccess={handleUploadSuccess}/>
+                    </div>
+
+                    <div>
+                        <ImageDisplay refreshKey = {refreshKey}/>
+                    </div>
+
                 </header>
 
             </div>
         </div>
-
-
     </div>
-  );
+    );
 }
 
 export default App;
