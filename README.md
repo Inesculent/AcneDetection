@@ -3,7 +3,7 @@ Frontend for AcneSegmentation
 
 Video Demo
 ----------------
-[![Acne Detection](https://img.youtube.com/vi/https://www.youtube.com/watch?v=eicBLMGiN2c/0.jpg)](https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=eicBLMGiN2c)
+[![Acne Detection](https://img.youtube.com/vi/eicBLMGiN2c/0.jpg)](https://www.youtube.com/watch?v=eicBLMGiN2c)
 
 
 
