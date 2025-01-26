@@ -42,7 +42,9 @@ const ImageUpload = ({ updateConstant , updateValue, onUploadSuccess}) => {
                 setUploadStatus(`Upload successful: ${result.number}`);
                 updateValue(result.number)
                 updateConstant(result.cover)
-                onUploadSuccess();
+                onUploadSuccess(result.file_path);
+
+
 
             } else {
                 setUploadStatus("Upload failed. Please try again.");

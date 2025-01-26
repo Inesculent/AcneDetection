@@ -5,6 +5,7 @@ export function ProgressBlock({ progress, title, hasBar}) {
 
     const[color, setColor] = useState("white");
 
+    // Broader container with 2 different states depending on the "block" you want to use
     useEffect(() => {
         if (progress <= 8) {
             setColor("#a5f30a");

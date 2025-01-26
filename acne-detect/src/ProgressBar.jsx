@@ -6,6 +6,7 @@ const ProgressBar = ({ progress }) => {
 
     let barStyle = 'gray'
 
+    // Simple logic for dynamic coloring of bar
     if (progress < .5){
         barStyle = '#a5f30a';
     }
@@ -26,7 +27,7 @@ const ProgressBar = ({ progress }) => {
             setPathLength(containerWidth - 10); // Subtracting a small margin for padding
         }
 
-        // Optional: Update on window resize for responsiveness
+
         const handleResize = () => {
             if (svgRef.current) {
                 const containerWidth = svgRef.current.offsetWidth;
