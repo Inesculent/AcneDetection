@@ -1,15 +1,26 @@
-Frontend for AcneDetection segmentation software.
+Frontend for AcneSegmentation
+---------------------------------
 
+Video Demo
+----------------
+[![Acne Detection](https://img.youtube.com/vi/https://www.youtube.com/watch?v=eicBLMGiN2c/0.jpg)](https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=eicBLMGiN2c)
 
-<iframe width="560" height="315" src="[https://www.youtube.com/embed/VIDEO_ID](https://www.youtube.com/watch?v=eicBLMGiN2c)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 **To run**
+-----------------
 
-*npm start*
+1. Navigate to the acne-detect directory. *cd acne-detect*
+2. *npm install* for all the dependencies.Wa
+3. *npm start*
+
 
 **Background Information:**
-Segmentation trained on approx ~2000 images. Dataset carefully curated from variety of Kaggle Datasets, segmented by hand.
+
+Segmentation with efficientnet-b1 backbone on approx ~400 images. 
+Dataset carefully curated from variety of Kaggle Datasets, annotated by hand.
+
+Please reference the backend for additional information.
 
 
 
