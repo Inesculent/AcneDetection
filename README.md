@@ -16,11 +16,12 @@ Video Demo
 
 
 **Background Information:**
+------------------
 
 Segmentation with efficientnet-b1 backbone on approx ~400 images. 
 Dataset carefully curated from variety of Kaggle Datasets, annotated by hand.
 
-Please reference the backend for additional information.
+Please reference the [backend](https://github.com/Inesculent/AcneBackend) for additional information.
 
 
 
